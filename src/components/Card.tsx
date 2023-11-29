@@ -51,7 +51,10 @@ const Card = (props: Props) => {
 				<p className="uppercase py-5 text-gray-300">
 					{company.started} - {company.ended}
 				</p>
-				<ul className="list-disc space-y-4 ml-5 text-sm max-h-52 overflow-y-scroll">
+				<ul
+					className="list-disc space-y-4 ml-5 text-sm max-h-44 overflow-y-scroll 
+					scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#AD343E]/80"
+				>
 					{company.points.map((point) => (
 						<li key={point}>{point}</li>
 					))}
