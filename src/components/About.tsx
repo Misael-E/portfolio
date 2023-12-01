@@ -2,10 +2,14 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../../typings";
+import { urlFor } from "../../sanity";
 
-type Props = {};
+type Props = {
+	pageInfo: PageInfo;
+};
 
-const About = (props: Props) => {
+const About = ({ pageInfo }: Props) => {
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -22,8 +26,9 @@ const About = (props: Props) => {
 				transition={{ duration: 1.2 }}
 				whileInView={{ x: 0 }}
 				viewport={{ once: true }}
-				src="/profile.jpg"
-				className="-mb-20 md:mb-0 mt-10 md:ml-10 flex-shrink-0 w-32 h-32 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]"
+				src={urlFor(pageInfo?.profilePic).url()}
+				className="-mb-20 md:mb-0 mt-10 md:ml-10 flex-shrink-0 w-32 h-32 rounded-full object-cover 
+				md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]"
 			/>
 
 			<div className="space-y-4 md:space-y-10 px-0 md:px-10">
@@ -35,24 +40,7 @@ const About = (props: Props) => {
 					bit of me
 				</h4>
 				<p className="text-sm md:text-base">
-					As a recent graduate from the University of Calgary with a
-					Bachelor of Science in Computer Science, specializing in
-					Software Engineering, I am excited to embark on my
-					professional journey in the tech industry. During my time at
-					the university, I had the opportunity to work with various
-					startup companies. This experience allowed me to enhance my
-					skills in technologies like ReactJS, Python, SQL, Google
-					Cloud Platform (GCP), and Amazon Web Services (AWS). Working
-					in these dynamic environments taught me the importance of
-					adaptability, multitasking, and continuous learning. Apart
-					from my academic and professional endeavors, I have a keen
-					interest in building and benchmarking PCs, utilizing the
-					latest technologies in the market. Currently, my primary
-					interest lies in deepening my understanding of data
-					structures and algorithms—a passion I am eager to apply in a
-					full-time role. With a blend of academic knowledge and
-					practical experience, I am ready to contribute to and grow
-					within the tech industry.
+					{pageInfo.backgroundInformation}
 				</p>
 			</div>
 		</motion.div>

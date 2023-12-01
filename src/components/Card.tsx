@@ -3,21 +3,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Experiences } from "../../typings";
+import { urlFor } from "../../sanity";
 
 type Props = {
-	company: {
-		src: string;
-		name: string;
-		position: string;
-		started: string;
-		ended: string;
-		techSrc: string[];
-		points: string[];
-	};
+	experience: Experiences;
 };
 
-const Card = (props: Props) => {
-	const { company } = props;
+const Card = ({ experience }: Props) => {
 	return (
 		<article
 			className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] 
@@ -30,18 +23,18 @@ const Card = (props: Props) => {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
 				className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
-				src={company.src}
+				src={urlFor(experience.companyImage).url()}
 				alt="company"
 			/>
 			<div className="px-0 md:px-10">
-				<h4 className="text-3xl font-light">{company.position}</h4>
-				<p className="font-bold text-2xl mt-1">{company.name}</p>
+				<h4 className="text-3xl font-light">{experience.jobTitle}</h4>
+				<p className="font-bold text-2xl mt-1">{experience.company}</p>
 				<div className="flex space-x-2 my-2">
-					{company.techSrc.map((src) => (
+					{experience.technologies.map((tech) => (
 						<Image
-							key={src}
+							key={tech._id}
 							className="h-10 w-10 rounded-full"
-							src={src}
+							src={urlFor(tech.image).url()}
 							alt="tech"
 							width={240}
 							height={240}
@@ -49,14 +42,17 @@ const Card = (props: Props) => {
 					))}
 				</div>
 				<p className="uppercase py-5 text-gray-300">
-					{company.started} - {company.ended}
+					{new Date(experience.dateStarted).toDateString()} -{" "}
+					{experience.isCurrentlyWorkingHere
+						? "Present"
+						: new Date(experience.dateEnded).toDateString()}
 				</p>
 				<ul
-					className="list-disc space-y-4 ml-5 text-sm max-h-44 overflow-y-scroll 
+					className="list-disc space-y-4 ml-5 text-sm max-h-44 overflow-y-scroll pr-4
 					scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#AD343E]/80"
 				>
-					{company.points.map((point) => (
-						<li key={point}>{point}</li>
+					{experience.points.map((point, idx) => (
+						<li key={idx}>{point}</li>
 					))}
 				</ul>
 			</div>

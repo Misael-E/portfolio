@@ -7,39 +7,65 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Image from "next/image";
 import Link from "next/link";
+import { Experiences, PageInfo, Project, Skill, Social } from "../../typings";
+import { fetchPageInfo } from "../../utils/fetchPageInfo";
+import { fetchExperiences } from "../../utils/fetchExperiences";
+import { fetchSkills } from "../../utils/fetchSkills";
+import { fetchProjects } from "../../utils/fetchProjects";
+import { fetchSocials } from "../../utils/fetchSocials";
 
-const Home = () => {
+type Props = {};
+
+const fetchAllData = async () => {
+	const pageInfo: PageInfo = await fetchPageInfo();
+	const experiences: Experiences[] = await fetchExperiences();
+	const skills: Skill[] = await fetchSkills();
+	const projects: Project[] = await fetchProjects();
+	const socials: Social[] = await fetchSocials();
+
+	return {
+		pageInfo,
+		experiences,
+		skills,
+		projects,
+		socials,
+	};
+};
+
+const Home = async (props: Props) => {
+	const { pageInfo, experiences, skills, projects, socials } =
+		await fetchAllData();
 	return (
 		<div
 			className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory 
 		overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 
 		scrollbar-thumb-[#AD343E]/80"
 		>
-			<Header />
+			<Header socials={socials} />
 
 			<section id="hero" className="snap-start">
-				<Hero />
+				<Hero pageInfo={pageInfo} />
 			</section>
 
 			{/* About */}
 			<section id="about" className="snap-center">
-				<About />
+				<About pageInfo={pageInfo} />
 			</section>
 			{/* Experiences */}
 
 			<section id="experience" className="snap-center">
-				<Experience />
+				<Experience experiences={experiences} />
 			</section>
 
 			{/* Skills */}
 
 			<section id="skills" className="snap-start">
-				<Skills />
+				<Skills skills={skills} />
 			</section>
 
 			{/* Projects */}
 			<section id="projects" className="snap-start">
-				<Projects />
+				<Projects projects={projects} />
 			</section>
 			{/* Contact Me */}
 
