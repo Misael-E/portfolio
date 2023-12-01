@@ -1,10 +1,8 @@
 import { Project } from "../typings";
 
 export const fetchProjects = async () => {
-	const res = await fetch(
-		`${process.env.NEXT_PUBLIC_BASE_URL}/api/getProjects`
-	);
-	const data = await res.json();
+	const res = await import(`../src/app/api/getProjects/route`);
+	const data = await (await res.GET()).json();
 	const projects: Project[] = data.projects;
 
 	return projects;
