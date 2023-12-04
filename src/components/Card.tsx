@@ -13,7 +13,7 @@ type Props = {
 const Card = ({ experience }: Props) => {
 	return (
 		<article
-			className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] 
+			className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[300px] 
 		md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 
 		cursor-pointer transition-opacity duration-200 overflow-hidden"
 		>
@@ -22,18 +22,22 @@ const Card = ({ experience }: Props) => {
 				transition={{ duration: 1.2 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
-				className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+				className="w-24 h-24 md:w-32 md:h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
 				src={urlFor(experience.companyImage).url()}
 				alt="company"
 			/>
 			<div className="px-0 md:px-10">
-				<h4 className="text-3xl font-light">{experience.jobTitle}</h4>
-				<p className="font-bold text-2xl mt-1">{experience.company}</p>
+				<h4 className="text-xl md:text-3xl font-light">
+					{experience.jobTitle}
+				</h4>
+				<p className="font-bold text-lg md:text-2xl mt-1">
+					{experience.company}
+				</p>
 				<div className="flex space-x-2 my-2">
 					{experience.technologies.map((tech) => (
 						<Image
 							key={tech._id}
-							className="h-10 w-10 rounded-full"
+							className="h-5 w-5 md:h-10 md:w-10 rounded-full"
 							src={urlFor(tech.image).url()}
 							alt="tech"
 							width={240}

@@ -27,36 +27,36 @@ const Contact = (props: Props) => {
 				Contact
 			</h3>
 
-			<div className="flex flex-col space-y-10">
-				<h4 className="text-4xl font-semibold text-center">
+			<div className="flex flex-col space-y-4 md:space-y-10">
+				<h4 className="text-2xl md:text-4xl font-semibold text-center">
 					Ask me more.{" "}
 					<span className="decoration-[#AD343E]/50 underline">
 						Lets Talk.
 					</span>
 				</h4>
 
-				<div className="space-y-10">
+				<div className="space-y-4 md:space-y-10">
 					<div className="flex items-center space-x-5 justify-center">
 						<PhoneIcon className="text-[#AD343E] h-7 w-7 animate-pulse" />
-						<p className="text-2xl">+1 403-615-2718</p>
+						<p className="text-lg md:text-2xl">+1 403-615-2718</p>
 					</div>
 					<div className="flex items-center space-x-5 justify-center">
 						<EnvelopeIcon className="text-[#AD343E] h-7 w-7 animate-pulse" />
-						<p className="text-2xl">
+						<p className="text-lg md:text-2xl">
 							misael.esperanzate@hotmail.com
 						</p>
 					</div>
 					<div className="flex items-center space-x-5 justify-center">
 						<MapPinIcon className="text-[#AD343E] h-7 w-7 animate-pulse" />
-						<p className="text-2xl">Chestermere, AB</p>
+						<p className="text-lg md:text-2xl">Chestermere, AB</p>
 					</div>
 				</div>
 
 				<form
 					onSubmit={handleSubmit(onSubmit)}
-					className="flex flex-col space-y-2 w-fit mx-auto"
+					className="flex flex-col space-y-2 md:w-fit mx-auto"
 				>
-					<div className="flex space-x-2">
+					<div className="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
 						<input
 							{...register("name")}
 							placeholder="Name"
