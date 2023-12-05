@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-	html body {
-		@apply h-screen;
+	html,
+	body {
+		@apply h-screen max-h-full;
 	}
 }
 
