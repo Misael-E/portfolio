@@ -13,8 +13,8 @@ type Props = {
 const Card = ({ experience }: Props) => {
 	return (
 		<article
-			className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[300px] 
-		md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 
+			className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[18.75rem] 
+		md:w-[37.5rem] xl:w-[56.25rem] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 
 		cursor-pointer transition-opacity duration-200 overflow-hidden"
 		>
 			<motion.img
@@ -22,7 +22,7 @@ const Card = ({ experience }: Props) => {
 				transition={{ duration: 1.2 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
-				className="w-24 h-24 md:w-32 md:h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+				className="w-24 h-24 md:w-32 md:h-32 rounded-full xl:w-[12.5rem] xl:h-[12.5rem] object-cover object-center"
 				src={urlFor(experience.companyImage).url()}
 				alt="company"
 			/>
