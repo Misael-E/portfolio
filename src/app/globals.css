@@ -5,7 +5,7 @@
 @layer base {
 	html,
 	body {
-		@apply h-screen max-h-full;
+		@apply h-screen w-screen;
 	}
 }
 
