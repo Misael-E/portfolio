@@ -15,7 +15,7 @@ const Experience = ({ experiences }: Props) => {
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
 			transition={{ duration: 1.5 }}
-			className="h-screen flex overflow-hidden flex-col items-center
+			className="h-[100dvh] flex overflow-hidden flex-col items-center
 			 max-w-full px-10 justify-center mx-auto"
 		>
 			<h3 className="md:pt-10 uppercase tracking-[1.25rem] text-gray-500 text-2xl">
