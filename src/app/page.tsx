@@ -37,13 +37,13 @@ const Home = async (props: Props) => {
 		await fetchAllData();
 	return (
 		<div
-			className="bg-[rgb(36,36,36)] text-white h-full snap-y snap-mandatory 
+			className="bg-[rgb(36,36,36)] text-white h-screen w-screen snap-y snap-mandatory 
 		overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 
 		scrollbar-thumb-[#AD343E]/80"
 		>
 			<Header socials={socials} />
 
-			<section id="hero" className="snap-start">
+			<section id="hero" className="snap-center">
 				<Hero pageInfo={pageInfo} />
 			</section>
 
@@ -59,17 +59,17 @@ const Home = async (props: Props) => {
 
 			{/* Skills */}
 
-			<section id="skills" className="snap-start">
+			<section id="skills" className="snap-center">
 				<Skills skills={skills} />
 			</section>
 
 			{/* Projects */}
-			<section id="projects" className="snap-start">
+			<section id="projects" className="snap-center">
 				<Projects projects={projects} />
 			</section>
 			{/* Contact Me */}
 
-			<section id="contact" className="snap-start">
+			<section id="contact" className="snap-center">
 				<Contact />
 			</section>
 
