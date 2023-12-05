@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-	html,
+/* @layer base {
 	body {
-		@apply h-screen w-screen;
+		@apply h-screen;
 	}
-}
+} */
 
 @layer components {
 	.heroButton {
