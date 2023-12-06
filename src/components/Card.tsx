@@ -45,14 +45,14 @@ const Card = ({ experience }: Props) => {
 						/>
 					))}
 				</div>
-				<p className="uppercase py-5 text-gray-300">
+				<p className="text-xs md:text-lg uppercase py-5 text-gray-300">
 					{new Date(experience.dateStarted).toDateString()} -{" "}
 					{experience.isCurrentlyWorkingHere
 						? "Present"
 						: new Date(experience.dateEnded).toDateString()}
 				</p>
 				<ul
-					className="list-disc space-y-4 ml-5 text-sm max-h-44 overflow-y-scroll pr-4
+					className="list-disc space-y-4 ml-5 text-sm max-h-32 md:max-h-44 overflow-y-scroll pr-4
 					scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#AD343E]/80"
 				>
 					{experience.points.map((point, idx) => (

@@ -23,12 +23,12 @@ const Contact = (props: Props) => {
 			className="h-[100dvh] relative flex flex-col text-center md:text-left md:flex-row 
 		max-w-7xl px-10 justify-evenly mx-auto items-center"
 		>
-			<h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+			<h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl">
 				Contact
 			</h3>
 
-			<div className="flex flex-col space-y-4 md:space-y-10">
-				<h4 className="text-2xl md:text-4xl font-semibold text-center">
+			<div className="flex flex-col pt-10 md:pt-0 space-y-4 md:space-y-10">
+				<h4 className="text-xl md:text-4xl font-semibold text-center">
 					Ask me more.{" "}
 					<span className="decoration-[#AD343E]/50 underline">
 						Lets Talk.
@@ -36,19 +36,19 @@ const Contact = (props: Props) => {
 				</h4>
 
 				<div className="space-y-4 md:space-y-10">
-					<div className="flex items-center space-x-5 justify-center">
+					<div className="flex items-center space-x-2 md:space-x-5 justify-center">
 						<PhoneIcon className="text-[#AD343E] h-7 w-7 animate-pulse" />
-						<p className="text-lg md:text-2xl">+1 403-615-2718</p>
+						<p className="text-md md:text-2xl">+1 403-615-2718</p>
 					</div>
-					<div className="flex items-center space-x-5 justify-center">
+					<div className="flex items-center space-x-2 md:space-x-5 justify-center">
 						<EnvelopeIcon className="text-[#AD343E] h-7 w-7 animate-pulse" />
-						<p className="text-lg md:text-2xl">
+						<p className="text-md md:text-2xl">
 							misael.esperanzate@hotmail.com
 						</p>
 					</div>
-					<div className="flex items-center space-x-5 justify-center">
+					<div className="flex items-center space-x-2 md:space-x-5 justify-center">
 						<MapPinIcon className="text-[#AD343E] h-7 w-7 animate-pulse" />
-						<p className="text-lg md:text-2xl">Chestermere, AB</p>
+						<p className="text-md md:text-2xl">Chestermere, AB</p>
 					</div>
 				</div>
 

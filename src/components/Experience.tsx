@@ -18,7 +18,7 @@ const Experience = ({ experiences }: Props) => {
 			className="h-[100dvh] flex overflow-hidden flex-col items-center
 			 max-w-full px-10 justify-center mx-auto"
 		>
-			<h3 className="md:pt-10 uppercase tracking-[1.25rem] text-gray-500 text-2xl">
+			<h3 className="pt-10 uppercase tracking-[1.25rem] text-gray-500 text-xl md:text-2xl">
 				Experience
 			</h3>
 			<div
