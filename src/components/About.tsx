@@ -27,7 +27,7 @@ const About = ({ pageInfo }: Props) => {
 				whileInView={{ x: 0 }}
 				viewport={{ once: true }}
 				src={urlFor(pageInfo?.profilePic).url()}
-				className="-mb-20 md:mb-0 mt-10 md:ml-10 flex-shrink-0 w-32 h-32 rounded-full object-cover 
+				className="-mb-24 md:mb-0 mt-10 md:ml-10 flex-shrink-0 w-40 h-40 rounded-full object-cover 
 				md:rounded-lg md:w-64 md:h-96 xl:w-[31.5rem] xl:h-[37.5rem]"
 			/>
 
