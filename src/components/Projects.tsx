@@ -11,7 +11,6 @@ type Props = {
 };
 
 const Projects = ({ projects }: Props) => {
-	console.log(projects);
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -20,7 +19,7 @@ const Projects = ({ projects }: Props) => {
 			className="h-[100dvh] relative flex overflow-hidden flex-col text-left 
 		md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
 		>
-			<h3 className="absolute top-24 uppercase tracking-[1.25rem] text-gray-500 text-2xl">
+			<h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl">
 				Projects
 			</h3>
 
@@ -31,7 +30,7 @@ const Projects = ({ projects }: Props) => {
 				{projects?.map((project) => (
 					<div
 						key={project._id}
-						className="w-[100dvw] flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-[100dvh]"
+						className="h-[100dvh] w-full flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-12 md:p-44"
 					>
 						<motion.img
 							initial={{ y: -300, opacity: 0 }}
@@ -39,18 +38,43 @@ const Projects = ({ projects }: Props) => {
 							transition={{ duration: 1.2 }}
 							viewport={{ once: true }}
 							src={urlFor(project.image).url()}
-							className=""
+							className="max-h-96 pt-4"
 							alt="project"
 						/>
-						<div className="space-y-10 px-0 md:px-10 max-w-6xl">
-							<h4 className="text-4xl font-semibold text-center">
-								{project.title}
-							</h4>
+						<div className="space-y-5 md:space-y-10 px-0 md:px-10 max-w-6xl">
+							<div className="">
+								<h4 className="text-xl md:text-4xl font-semibold text-center">
+									{project.title}
+								</h4>
+								<div className="flex items-center justify-center space-x-5 pt-3 font-semibold">
+									<p>
+										<a
+											href={project.linkToProd}
+											title="Demo"
+											className="underline"
+										>
+											Demo
+										</a>
+									</p>
+									<div className="border-r border-white h-6" />
+
+									<p>
+										<a
+											href={project.linkToBuild}
+											title="GithubRepo"
+											className="underline"
+										>
+											Repo
+										</a>
+									</p>
+								</div>
+							</div>
+
 							<div className="flex items-center space-x-2 justify-center">
 								{project.technologies.map((technology) => (
 									<Image
 										key={technology._id}
-										className="h-10 w-10"
+										className="h-7 w-7 md:h-10 md:w-10"
 										src={urlFor(technology.image).url()}
 										alt="technology"
 										width={800}
@@ -59,7 +83,7 @@ const Projects = ({ projects }: Props) => {
 								))}
 							</div>
 
-							<p className="text-lg text-center md:text-left">
+							<p className="text-sm md:text-lg text-center md:text-left">
 								{project.summary}
 							</p>
 						</div>
