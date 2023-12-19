@@ -2,6 +2,10 @@ import { groq } from "next-sanity";
 import { sanityClient } from "../../../../sanity";
 import { PageInfo } from "../../../../typings";
 
+export const maxDuration = 10;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const query = groq`
 	*[_type == "pageInfo"][0]
 `;
